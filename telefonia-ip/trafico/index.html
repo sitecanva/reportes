@@ -196,7 +196,18 @@
             justify-content: space-between;
             align-items: center;
             gap: 10px;
-            flex-wrap: wrap;
+            padding-right: 55px; /* Espacio garantizado para el logo fijo en la derecha */
+        }
+
+        .header-logo-anchored {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(102, 255, 255, 0.4));
+            z-index: 10;
         }
 
         .brand-badge {
@@ -796,6 +807,16 @@
                 gap: 16px;
             }
 
+            .brand-row {
+                padding-right: 48px;
+            }
+
+            .header-logo-anchored {
+                height: 32px;
+                top: 0;
+                right: 0;
+            }
+
             .meta-pills-row {
                 grid-template-columns: 1fr;
                 gap: 8px;
@@ -1003,24 +1024,24 @@
             <div class="glow-orb-2"></div>
             <div class="glow-orb-3"></div>
 
-            <!-- Header Section -->
-            <header class="infographic-header">
+            <!-- Header Section (Logo fijado en la esquina superior derecha del reporte para cualquier dispositivo) -->
+            <header class="infographic-header" style="position: relative;">
+                <!-- Logo iPulso fijado en la parte superior derecha independiente -->
+                <img id="header-logo-img" class="header-logo-anchored" src="https://i.ibb.co/qMLHwWXK/logo-ipulso-2.png" alt="logo ipulso 2" border="0">
+
                 <div class="brand-row">
                     <span class="brand-badge" id="val-badge">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone-call" aria-hidden="true" size="14" class="lucide lucide-phone-call"><path d="M13 2a9 9 0 0 1 9 9"></path><path d="M13 6a5 5 0 0 1 5 5"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
                         <span id="val-badge-text">Cantv Residencial</span>
                     </span>
-                    <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
-                        <span class="brand-sub" id="val-brand-sub">REPORTE DE RENDIMIENTO</span>
-                        <!-- Logo iPulso 2 en la parte superior derecha -->
-                        <img id="header-logo-img" src="https://i.ibb.co/qMLHwWXK/logo-ipulso-2.png" alt="logo ipulso 2" border="0" style="height: 38px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(102, 255, 255, 0.4));">
-                    </div>
+                    <!-- Subtítulo Header independiente del logo -->
+                    <span class="brand-sub" id="val-brand-sub">REPORTE EJECUTIVO DE RENDIMIENTO</span>
                 </div>
 
                 <div class="campaign-banner">
                     <div class="banner-label">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="activity" aria-hidden="true" size="13" class="lucide lucide-activity"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg>
-                        <span id="lbl-banner-tag">ANÁLISIS DE TRÁFICO Y CONSUMO - Elab. 25/09/2026</span>
+                        <span id="lbl-banner-tag">ANÁLISIS DE TRÁFICO Y CONSUMO</span>
                     </div>
                     <h1 class="campaign-title-text" id="val-campaign-heading">TELEFONÍA IP: PERÍODO ENE-AGO 2026</h1>
                 </div>
@@ -1461,6 +1482,10 @@
                     <div class="footer-brand-tag" id="val-footer-brand-tag">IPulso: Infografía Ejecutiva - Telefonía IP</div>
                     <div class="footer-credit-line" id="val-footer-credit-1">Elaborado por Mercadeo Hogares - Mercados Masivos (VPPS).</div>
                     <div class="footer-credit-line" id="val-footer-credit-2">Colaboración y fuente de datos: Métodos Cuantitativos y Base de Datos -Gerencia Inteligencia y Servicios de Mercadeo.</div>
+                    <!-- Nueva línea: Fecha de elaboración editable -->
+                    <div class="footer-credit-line" id="val-footer-date-line">
+                        Fecha de elaboración: <strong id="val-footer-date">25 de Septiembre de 2026</strong>.
+                    </div>
                 </div>
             </footer>
         </div>
