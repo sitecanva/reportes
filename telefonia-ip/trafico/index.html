@@ -260,14 +260,7 @@
             line-height: 1.25;
             text-transform: uppercase;
             letter-spacing: -0.3px;
-            background: linear-gradient(90deg, #FFFFFF 40%, #66FFFF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .campaign-title-text span {
-            color: var(--magenta);
-            -webkit-text-fill-color: var(--magenta);
+            color: var(--white);
         }
 
         .meta-pills-row {
@@ -569,7 +562,7 @@
         }
 
         .donut-center-info .total-num {
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 900;
             color: var(--white);
             line-height: 1.2;
@@ -711,6 +704,60 @@
             margin-bottom: 2px;
         }
 
+        /* Modal Sub-navigation Tabs */
+        .modal-tabs {
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            padding-bottom: 10px;
+            margin-bottom: 16px;
+        }
+
+        .modal-tab-btn {
+            background: rgba(12, 20, 44, 0.8);
+            border: 1px solid rgba(102, 255, 255, 0.2);
+            color: var(--gray-text);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .modal-tab-btn.active {
+            background: linear-gradient(135deg, var(--blue-royal), var(--blue-vibrant));
+            color: var(--white);
+            border-color: var(--cyan);
+            box-shadow: 0 0 12px rgba(102, 255, 255, 0.2);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .plain-text-hint {
+            background: rgba(102, 255, 255, 0.06);
+            border: 1px solid rgba(102, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 10.5px;
+            color: var(--gray-text);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .plain-text-hint strong {
+            color: var(--cyan);
+        }
+
         @media (max-width: 650px) {
             body {
                 padding: 10px 6px 30px 6px;
@@ -822,7 +869,7 @@
             border-radius: 16px;
             padding: 22px;
             width: 100%;
-            max-width: 560px;
+            max-width: 620px;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
@@ -834,7 +881,7 @@
             align-items: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 12px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .modal-title {
@@ -961,19 +1008,17 @@
                 <div class="brand-row">
                     <span class="brand-badge" id="val-badge">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone-call" aria-hidden="true" size="14" class="lucide lucide-phone-call"><path d="M13 2a9 9 0 0 1 9 9"></path><path d="M13 6a5 5 0 0 1 5 5"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
-                        Cantv Residencial
+                        <span id="val-badge-text">Cantv Residencial</span>
                     </span>
-                    <span class="brand-sub">REPORTE EJECUTIVO DE RENDIMIENTO</span>
+                    <span class="brand-sub" id="val-brand-sub">REPORTE EJECUTIVO DE RENDIMIENTO</span>
                 </div>
 
                 <div class="campaign-banner">
                     <div class="banner-label">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="activity" aria-hidden="true" size="13" class="lucide lucide-activity"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg>
-                        <span id="lbl-banner-tag">ANÁLISIS DE TRÁFICO Y CONSUMO</span>
+                        <span id="lbl-banner-tag">ANÁLISIS DE TRÁFICO Y CONSUMO  | Elab. 25-09-2026</span>
                     </div>
-                    <h1 class="campaign-title-text" id="val-campaign-heading">
-                        TELEFONÍA <span>IP</span>: <span id="val-title">PERÍODO ENE-AGO 2026</span>
-                    </h1>
+                    <h1 class="campaign-title-text" id="val-campaign-heading">TELEFONÍA IP: PERÍODO ENE-AGO 2026</h1>
                 </div>
 
                 <div class="meta-pills-row">
@@ -983,7 +1028,7 @@
                     </div>
                     <div class="meta-pill">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bar-chart" aria-hidden="true" size="14" class="lucide lucide-bar-chart"><path d="M5 21v-6"></path><path d="M12 21V9"></path><path d="M19 21V3"></path></svg>
-                        <span>Mes Pico: <strong id="val-peak">Febrero</strong></span>
+                        <span>Mes Pico: <strong id="val-peak">Feb</strong></span>
                     </div>
                 </div>
             </header>
@@ -1006,9 +1051,9 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock" aria-hidden="true" size="18" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
                             </div>
                         </div>
-                        <div class="kpi-main-val" id="val-total-min">13.57M</div>
+                        <div class="kpi-main-val" id="val-total-min">8.30M</div>
                         <div class="kpi-sub-detail">
-                            <span><strong id="sub-min-exact">13,568,405</strong> minutos procesados</span>
+                            <span><strong id="sub-min-exact">8,301,990</strong> minutos procesados</span>
                         </div>
                     </div>
 
@@ -1034,9 +1079,9 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bar-chart-2" aria-hidden="true" size="18" class="lucide lucide-bar-chart-2"><path d="M5 21v-6"></path><path d="M12 21V3"></path><path d="M19 21V9"></path></svg>
                             </div>
                         </div>
-                        <div class="kpi-main-val" id="val-peak-min">2.80M</div>
+                        <div class="kpi-main-val" id="val-peak-min">1.73M</div>
                         <div class="kpi-sub-detail">
-                            Registrado en <strong id="lbl-peak-month">Febrero</strong> (<span id="sub-peak-exact">2,795,127</span> min)
+                            Registrado en <strong id="lbl-peak-month">Feb</strong> (<span id="sub-peak-exact">1,734,541</span> min)
                         </div>
                     </div>
 
@@ -1048,11 +1093,216 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" aria-hidden="true" size="18" class="lucide lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
                             </div>
                         </div>
-                        <div class="kpi-main-val"><span id="val-plan-pct">65.0</span>%</div>
+                        <div class="kpi-main-val"><span id="val-plan-pct">43.0</span>%</div>
                         <div class="kpi-sub-detail">
-                            <strong style="color: var(--cyan);">Líder en uso</strong> con <span id="val-plan-min-pct">61.2</span>% del tráfico total
+                            <strong style="color: var(--cyan);">Líder en uso</strong> con <span id="val-plan-min-pct">60.1</span>% del tráfico total
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- Sección: Gráfico de Evolución Mensual de Tráfico con Promedio Automático -->
+            <section class="section-card">
+                <div class="card-title-row" style="justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div class="card-header-icon cyan-theme">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="line-chart" aria-hidden="true" size="20" class="lucide lucide-line-chart"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="card-title-main">Evolución de Tráfico Mensual</h3>
+                            <p class="card-title-sub">Histórico dinámico de minutos procesados mes a mes</p>
+                        </div>
+                    </div>
+
+                    <!-- Promedio de Tráfico Mensual (Cálculo Automático) -->
+                    <div style="background: rgba(12, 20, 44, 0.95); border: 1.5px solid var(--accent-green); border-radius: 12px; padding: 6px 14px; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calculator" aria-hidden="true" size="16" style="color: var(--accent-green);" class="lucide lucide-calculator"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+                        <div>
+                            <div style="font-size: 9.5px; color: var(--gray-sub); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Promedio Tráfico Mensual</div>
+                            <div style="font-size: 13.5px; font-weight: 900; color: var(--accent-green);" id="val-monthly-avg">1.04M min <span style="font-size: 10px; font-weight: 500; color: var(--gray-sub);">(1,037,749)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="position: relative; width: 100%; overflow-x: auto; padding: 10px 0;">
+                    <svg id="monthlyLineChartSvg" viewBox="0 0 740 220" style="width: 100%; height: auto; min-width: 540px; display: block;">
+                <defs>
+                    <linearGradient id="chartAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#66FFFF" stop-opacity="0.25"></stop>
+                        <stop offset="70%" stop-color="#FF00A8" stop-opacity="0.08"></stop>
+                        <stop offset="100%" stop-color="#040711" stop-opacity="0"></stop>
+                    </linearGradient>
+                    <linearGradient id="chartLineGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#00A9E0"></stop>
+                        <stop offset="50%" stop-color="#66FFFF"></stop>
+                        <stop offset="100%" stop-color="#FF00A8"></stop>
+                    </linearGradient>
+                </defs>
+
+                <!-- Background grid lines -->
+                
+                    <line x1="45" y1="38" x2="695" y2="38" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4"></line>
+                
+                    <line x1="45" y1="84.66666666666666" x2="695" y2="84.66666666666666" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4"></line>
+                
+                    <line x1="45" y1="131.33333333333331" x2="695" y2="131.33333333333331" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4"></line>
+                
+                    <line x1="45" y1="178" x2="695" y2="178" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4"></line>
+                
+
+                <!-- X Axis Line -->
+                <line x1="45" y1="178" x2="695" y2="178" stroke="rgba(102, 255, 255, 0.25)" stroke-width="1.5"></line>
+
+                <!-- Area Fill -->
+                <path d="M 45 178 L 45 107.06498030314648 L 137.85714285714286 38 L 230.71428571428572 89.53815332125329 L 323.57142857142856 82.87618338223196 L 416.42857142857144 54.10781180727351 L 509.28571428571433 76.13818180141028 L 602.1428571428571 156.69233416794415 L 695 149.5038733590039 L 695 178 Z" fill="url(#chartAreaGrad)"></path>
+
+                <!-- Main Line -->
+                <path d="M 45 107.06498030314648 L 137.85714285714286 38 L 230.71428571428572 89.53815332125329 L 323.57142857142856 82.87618338223196 L 416.42857142857144 54.10781180727351 L 509.28571428571433 76.13818180141028 L 602.1428571428571 156.69233416794415 L 695 149.5038733590039" fill="none" stroke="url(#chartLineGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+
+                <!-- Promedio Reference Line -->
+                <line x1="45" y1="94.24018976778295" x2="695" y2="94.24018976778295" stroke="#10B981" stroke-dasharray="4 3" stroke-width="1.8"></line>
+                <rect x="605" y="80.24018976778295" width="90" height="15" rx="4" fill="rgba(6, 20, 18, 0.9)" stroke="#10B981" stroke-width="1"></rect>
+                <text x="690" y="91.24018976778295" fill="#10B981" font-size="9.5" font-weight="800" text-anchor="end" font-family="Montserrat">Prom: 1.04M</text>
+
+                <!-- Points and text -->
+                
+                    <!-- Vertical guide line -->
+                    <line x1="45" y1="107.06498030314648" x2="45" y2="178" stroke="rgba(102, 255, 255, 0.12)" stroke-dasharray="2 2"></line>
+
+                    <!-- Value Label -->
+                    <text x="45" y="97.06498030314648" fill="#66FFFF" font-size="10.5" font-weight="800" text-anchor="middle" font-family="Montserrat">
+                        878.9K
+                    </text>
+
+                    <!-- Point Circle -->
+                    <circle cx="45" cy="107.06498030314648" r="4.5" fill="#040711" stroke="#66FFFF" stroke-width="2.5"></circle>
+                    <circle cx="45" cy="107.06498030314648" r="2.5" fill="#66FFFF" opacity="0.8"></circle>
+
+                    <!-- X-Axis Month Label -->
+                    <text x="45" y="206" fill="#BAC7E3" font-size="11" font-weight="600" text-anchor="middle" font-family="Montserrat">
+                        Ene
+                    </text>
+                
+                    <!-- Vertical guide line -->
+                    <line x1="137.85714285714286" y1="38" x2="137.85714285714286" y2="178" stroke="rgba(102, 255, 255, 0.12)" stroke-dasharray="2 2"></line>
+
+                    <!-- Value Label -->
+                    <text x="137.85714285714286" y="28" fill="#FF00A8" font-size="10.5" font-weight="800" text-anchor="middle" font-family="Montserrat">
+                        1.73M
+                    </text>
+
+                    <!-- Point Circle -->
+                    <circle cx="137.85714285714286" cy="38" r="6" fill="#040711" stroke="#FF00A8" stroke-width="2.5"></circle>
+                    <circle cx="137.85714285714286" cy="38" r="4" fill="#FF00A8" opacity="0.8"></circle>
+
+                    <!-- X-Axis Month Label -->
+                    <text x="137.85714285714286" y="206" fill="#FF00A8" font-size="11" font-weight="800" text-anchor="middle" font-family="Montserrat">
+                        Feb
+                    </text>
+                
+                    <!-- Vertical guide line -->
+                    <line x1="230.71428571428572" y1="89.53815332125329" x2="230.71428571428572" y2="178" stroke="rgba(102, 255, 255, 0.12)" stroke-dasharray="2 2"></line>
+
+                    <!-- Value Label -->
+                    <text x="230.71428571428572" y="79.53815332125329" fill="#66FFFF" font-size="10.5" font-weight="800" text-anchor="middle" font-family="Montserrat">
+                        1.10M
+                    </text>
+
+                    <!-- Point Circle -->
+                    <circle cx="230.71428571428572" cy="89.53815332125329" r="4.5" fill="#040711" stroke="#66FFFF" stroke-width="2.5"></circle>
+                    <circle cx="230.71428571428572" cy="89.53815332125329" r="2.5" fill="#66FFFF" opacity="0.8"></circle>
+
+                    <!-- X-Axis Month Label -->
+                    <text x="230.71428571428572" y="206" fill="#BAC7E3" font-size="11" font-weight="600" text-anchor="middle" font-family="Montserrat">
+                        Mar
+                    </text>
+                
+                    <!-- Vertical guide line -->
+                    <line x1="323.57142857142856" y1="82.87618338223196" x2="323.57142857142856" y2="178" stroke="rgba(102, 255, 255, 0.12)" stroke-dasharray="2 2"></line>
+
+                    <!-- Value Label -->
+                    <text x="323.57142857142856" y="72.87618338223196" fill="#66FFFF" font-size="10.5" font-weight="800" text-anchor="middle" font-family="Montserrat">
+                        1.18M
+                    </text>
+
+                    <!-- Point Circle -->
+                    <circle cx="323.57142857142856" cy="82.87618338223196" r="4.5" fill="#040711" stroke="#66FFFF" stroke-width="2.5"></circle>
+                    <circle cx="323.57142857142856" cy="82.87618338223196" r="2.5" fill="#66FFFF" opacity="0.8"></circle>
+
+                    <!-- X-Axis Month Label -->
+                    <text x="323.57142857142856" y="206" fill="#BAC7E3" font-size="11" font-weight="600" text-anchor="middle" font-family="Montserrat">
+                        Abr
+                    </text>
+                
+                    <!-- Vertical guide line -->
+                    <line x1="416.42857142857144" y1="54.10781180727351" x2="416.42857142857144" y2="178" stroke="rgba(102, 255, 255, 0.12)" stroke-dasharray="2 2"></line>
+
+                    <!-- Value Label -->
+                    <text x="416.42857142857144" y="44.10781180727351" fill="#66FFFF" font-size="10.5" font-weight="800" text-anchor="middle" font-family="Montserrat">
+                        1.53M
+                    </text>
+
+                    <!-- Point Circle -->
+                    <circle cx="416.42857142857144" cy="54.10781180727351" r="4.5" fill="#040711" stroke="#66FFFF" stroke-width="2.5"></circle>
+                    <circle cx="416.42857142857144" cy="54.10781180727351" r="2.5" fill="#66FFFF" opacity="0.8"></circle>
+
+                    <!-- X-Axis Month Label -->
+                    <text x="416.42857142857144" y="206" fill="#BAC7E3" font-size="11" font-weight="600" text-anchor="middle" font-family="Montserrat">
+                        May
+                    </text>
+                
+                    <!-- Vertical guide line -->
+                    <line x1="509.28571428571433" y1="76.13818180141028" x2="509.28571428571433" y2="178" stroke="rgba(102, 255, 255, 0.12)" stroke-dasharray="2 2"></line>
+
+                    <!-- Value Label -->
+                    <text x="509.28571428571433" y="66.13818180141028" fill="#66FFFF" font-size="10.5" font-weight="800" text-anchor="middle" font-family="Montserrat">
+                        1.26M
+                    </text>
+
+                    <!-- Point Circle -->
+                    <circle cx="509.28571428571433" cy="76.13818180141028" r="4.5" fill="#040711" stroke="#66FFFF" stroke-width="2.5"></circle>
+                    <circle cx="509.28571428571433" cy="76.13818180141028" r="2.5" fill="#66FFFF" opacity="0.8"></circle>
+
+                    <!-- X-Axis Month Label -->
+                    <text x="509.28571428571433" y="206" fill="#BAC7E3" font-size="11" font-weight="600" text-anchor="middle" font-family="Montserrat">
+                        Jun
+                    </text>
+                
+                    <!-- Vertical guide line -->
+                    <line x1="602.1428571428571" y1="156.69233416794415" x2="602.1428571428571" y2="178" stroke="rgba(102, 255, 255, 0.12)" stroke-dasharray="2 2"></line>
+
+                    <!-- Value Label -->
+                    <text x="602.1428571428571" y="146.69233416794415" fill="#66FFFF" font-size="10.5" font-weight="800" text-anchor="middle" font-family="Montserrat">
+                        264.0K
+                    </text>
+
+                    <!-- Point Circle -->
+                    <circle cx="602.1428571428571" cy="156.69233416794415" r="4.5" fill="#040711" stroke="#66FFFF" stroke-width="2.5"></circle>
+                    <circle cx="602.1428571428571" cy="156.69233416794415" r="2.5" fill="#66FFFF" opacity="0.8"></circle>
+
+                    <!-- X-Axis Month Label -->
+                    <text x="602.1428571428571" y="206" fill="#BAC7E3" font-size="11" font-weight="600" text-anchor="middle" font-family="Montserrat">
+                        Jul
+                    </text>
+                
+                    <!-- Vertical guide line -->
+                    <line x1="695" y1="149.5038733590039" x2="695" y2="178" stroke="rgba(102, 255, 255, 0.12)" stroke-dasharray="2 2"></line>
+
+                    <!-- Value Label -->
+                    <text x="695" y="139.5038733590039" fill="#66FFFF" font-size="10.5" font-weight="800" text-anchor="middle" font-family="Montserrat">
+                        353.1K
+                    </text>
+
+                    <!-- Point Circle -->
+                    <circle cx="695" cy="149.5038733590039" r="4.5" fill="#040711" stroke="#66FFFF" stroke-width="2.5"></circle>
+                    <circle cx="695" cy="149.5038733590039" r="2.5" fill="#66FFFF" opacity="0.8"></circle>
+
+                    <!-- X-Axis Month Label -->
+                    <text x="695" y="206" fill="#BAC7E3" font-size="11" font-weight="600" text-anchor="middle" font-family="Montserrat">
+                        Ago
+                    </text>
+                
+            </svg>
                 </div>
             </section>
 
@@ -1075,13 +1325,13 @@
                                 <div class="op-dot consumo-dot"></div>
                                 <span>Plan x Consumo IP</span>
                             </div>
-                            <div class="operator-stats-text"><span id="op-consumo-min">8.30M</span> min <span id="op-consumo-pct">(61.2%)</span></div>
+                            <div class="operator-stats-text"><span id="op-consumo-min">4.99M</span> min <span id="op-consumo-pct">(60.1%)</span></div>
                         </div>
                         <div style="font-size: 11px; color: var(--gray-sub); margin-bottom: 2px;">
-                            Clientes: <span id="op-consumo-cli" style="color: var(--white); font-weight: 600;">187,179</span>
+                            Clientes: <span id="op-consumo-cli" style="color: var(--white); font-weight: 600;">123,870</span>
                         </div>
                         <div class="progress-track-v2">
-                            <div class="progress-fill-v2 consumo-fill" id="fill-consumo" style="width: 61.2%;"></div>
+                            <div class="progress-fill-v2 consumo-fill" id="fill-consumo" style="width: 60.1%;"></div>
                         </div>
                     </div>
 
@@ -1092,13 +1342,13 @@
                                 <div class="op-dot nacional-dot"></div>
                                 <span>Plan Nacional IP</span>
                             </div>
-                            <div class="operator-stats-text"><span id="op-nacional-min">3.94M</span> min <span id="op-nacional-pct">(29.06%)</span></div>
+                            <div class="operator-stats-text"><span id="op-nacional-min">2.44M</span> min <span id="op-nacional-pct">(29.37%)</span></div>
                         </div>
                         <div style="font-size: 11px; color: var(--gray-sub); margin-bottom: 2px;">
-                            Clientes: <span id="op-nacional-cli" style="color: var(--white); font-weight: 600;">81,873</span>
+                            Clientes: <span id="op-nacional-cli" style="color: var(--white); font-weight: 600;">55,556</span>
                         </div>
                         <div class="progress-track-v2">
-                            <div class="progress-fill-v2 nacional-fill" id="fill-nacional" style="width: 29.06%;"></div>
+                            <div class="progress-fill-v2 nacional-fill" id="fill-nacional" style="width: 29.37%;"></div>
                         </div>
                     </div>
 
@@ -1109,13 +1359,13 @@
                                 <div class="op-dot plana-dot"></div>
                                 <span>Tarifa Plana Nacional IP</span>
                             </div>
-                            <div class="operator-stats-text"><span id="op-plana-min">1.32M</span> min <span id="op-plana-pct">(9.76%)</span></div>
+                            <div class="operator-stats-text"><span id="op-plana-min">883.5K</span> min <span id="op-plana-pct">(10.64%)</span></div>
                         </div>
                         <div style="font-size: 11px; color: var(--gray-sub); margin-bottom: 2px;">
-                            Clientes: <span id="op-plana-cli" style="color: var(--white); font-weight: 600;">18,745</span>
+                            Clientes: <span id="op-plana-cli" style="color: var(--white); font-weight: 600;">12,908</span>
                         </div>
                         <div class="progress-track-v2">
-                            <div class="progress-fill-v2 plana-fill" id="fill-plana" style="width: 9.76%;"></div>
+                            <div class="progress-fill-v2 plana-fill" id="fill-plana" style="width: 10.64%;"></div>
                         </div>
                     </div>
                 </div>
@@ -1136,23 +1386,23 @@
                     <div class="donut-container-v2">
                         <svg class="donut-svg-v2" viewBox="0 0 42 42">
                             <circle class="donut-circle-bg" cx="21" cy="21" r="15.91549430918954"></circle>
-                            <circle class="donut-circle-1" id="donut-seg-1" cx="21" cy="21" r="15.91549430918954" stroke-dasharray="30.3 69.7" stroke-dashoffset="0"></circle>
-                            <circle class="donut-circle-2" id="donut-seg-2" cx="21" cy="21" r="15.91549430918954" stroke-dasharray="25.9 74.1" stroke-dashoffset="-30.3"></circle>
-                            <circle class="donut-circle-3" id="donut-seg-3" cx="21" cy="21" r="15.91549430918954" stroke-dasharray="43.8 56.2" stroke-dashoffset="-56.2"></circle>
+                            <circle class="donut-circle-1" id="donut-seg-1" cx="21" cy="21" r="15.91549430918954" stroke-dasharray="56.6 43.4" stroke-dashoffset="0"></circle>
+                            <circle class="donut-circle-2" id="donut-seg-2" cx="21" cy="21" r="15.91549430918954" stroke-dasharray="42.3 57.7" stroke-dashoffset="-56.6"></circle>
+                            <circle class="donut-circle-3" id="donut-seg-3" cx="21" cy="21" r="15.91549430918954" stroke-dasharray="1.1 98.9" stroke-dashoffset="-98.9"></circle>
                         </svg>
                         <div class="donut-center-info">
-                            <div class="total-num" id="donut-total">13.57M</div>
+                            <div class="total-num" id="donut-total">8.30M</div>
                             <div class="total-lbl">Minutos</div>
                         </div>
                     </div>
                     <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 8px; width: 100%;">
-                        <!-- Legend Local -->
+                        <!-- Legend Local y Nacional -->
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700;">
                                 <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--cyan);"></div>
-                                Local
+                                Local y Nacional
                             </div>
-                            <div style="font-size: 12px; font-weight: 800; color: var(--cyan);"><span id="lbl-dest-local">4.11M</span> <span style="font-size: 10px; color: var(--gray-sub); font-weight: 400;" id="pct-dest-local">(30.3%)</span></div>
+                            <div style="font-size: 12px; font-weight: 800; color: var(--cyan);"><span id="lbl-dest-localnacional">4.70M</span> <span style="font-size: 10px; color: var(--gray-sub); font-weight: 400;" id="pct-dest-localnacional">(56.6%)</span></div>
                         </div>
                         <!-- Legend Celular -->
                         <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -1160,21 +1410,19 @@
                                 <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--magenta);"></div>
                                 Celular
                             </div>
-                            <div style="font-size: 12px; font-weight: 800; color: var(--magenta);"><span id="lbl-dest-celular">3.51M</span> <span style="font-size: 10px; color: var(--gray-sub); font-weight: 400;" id="pct-dest-celular">(25.9%)</span></div>
+                            <div style="font-size: 12px; font-weight: 800; color: var(--magenta);"><span id="lbl-dest-celular">3.51M</span> <span style="font-size: 10px; color: var(--gray-sub); font-weight: 400;" id="pct-dest-celular">(42.3%)</span></div>
                         </div>
-                        <!-- Legend Otros -->
+                        <!-- Legend Internacional -->
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700;">
                                 <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--blue-vibrant);"></div>
-                                Otros (Nac/Int/etc)
+                                Internacional
                             </div>
-                            <div style="font-size: 12px; font-weight: 800; color: var(--blue-vibrant);"><span id="lbl-dest-otros">5.95M</span> <span style="font-size: 10px; color: var(--gray-sub); font-weight: 400;" id="pct-dest-otros">(43.8%)</span></div>
+                            <div style="font-size: 12px; font-weight: 800; color: var(--blue-vibrant);"><span id="lbl-dest-internacional">91.7K</span> <span style="font-size: 10px; color: var(--gray-sub); font-weight: 400;" id="pct-dest-internacional">(1.1%)</span></div>
                         </div>
                     </div>
                 </div>
-                <div class="donut-text-summary" id="donut-narrative" style="padding-top: 12px; border-top: 1px dashed rgba(255, 255, 255, 0.12);">
-                    El tráfico se concentra mayoritariamente en llamadas <strong>Locales y Celulares</strong> (más del 56% combinado), evidenciando el uso de la línea para comunicación urbana y hacia redes móviles.
-                </div>
+                <div class="donut-text-summary" id="donut-narrative" style="padding-top: 12px; border-top: 1px dashed rgba(255, 255, 255, 0.12);">El tráfico se concentra abrumadoramente en llamadas <strong>Local y Nacional</strong> (56.6%) y <strong>Celular</strong> (42.3%), sumando el 98.9% del volumen total de 8.30M de minutos.</div>
             </section>
 
             <section class="storytelling-panel">
@@ -1189,36 +1437,26 @@
                     <div class="story-insight-item">
                         <div class="story-item-head">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="zap" aria-hidden="true" size="14" style="color: var(--magenta);" class="lucide lucide-zap"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"></path></svg>
-                            <span id="ins-title-1">Caída de Tráfico Hacia Agosto</span>
+                            <span id="ins-title-1">Comportamiento de Tráfico (Feb)</span>
                         </div>
-                        <div class="story-item-body" id="insight-1">
-                            Se observa una <strong>tendencia a la baja</strong> en el consumo general, pasando de un pico de 2.79M de minutos en Febrero a solo 662K en Agosto. <br><br>
-                            <strong style="color: var(--white);">💡 Recomendación:</strong> Lanzar campañas de fidelización o bonos de minutos locales promocionales para incentivar el uso de la línea fija durante el último cuatrimestre del año.
-                        </div>
+                        <div class="story-item-body" id="insight-1">Se registró un tráfico pico de <strong>1.73M</strong> minutos en Feb, acumulando <strong>8.30M</strong> minutos en el período. <br><br><strong style="color: var(--white);">💡 Recomendación:</strong> Implementar programas de fidelización para estabilizar el consumo mensual en periodos subsiguientes.</div>
                     </div>
 
                     <div class="story-insight-item">
                         <div class="story-item-head">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" size="14" style="color: var(--cyan);" class="lucide lucide-target"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-                            <span id="ins-title-2">Monetización del Tráfico a Celular</span>
+                            <span id="ins-title-2">Oportunidad en Tráfico Móvil</span>
                         </div>
-                        <div class="story-item-body" id="insight-2">
-                            El alto volumen de llamadas hacia <strong>Celular (3.51M)</strong> representa una importante fuente de interacción. A su vez, el 65% de usuarios prefiere pagar <strong>por consumo</strong>.<br><br>
-                            <strong style="color: var(--white);">💡 Recomendación:</strong> Diseñar "Bolsillos o Paquetes de Minutos a Celular" como un complemento adicional (Add-on) al Plan x Consumo, incrementando el ARPU de estos usuarios.
-                        </div>
+                        <div class="story-item-body" id="insight-2">El tráfico hacia <strong>Celular (3.51M)</strong> es altamente significativo. Además, el 43.0% de clientes elige el <strong>Plan x Consumo</strong>.<br><br><strong style="color: var(--white);">💡 Recomendación:</strong> Crear paquetes adicionales de minutos móviles como add-on al Plan x Consumo.</div>
                     </div>
                 </div>
             </section>
 
             <footer class="infographic-footer">
                 <div class="footer-credits">
-                    <div class="footer-brand-tag">IPulso: Infografía Ejecutiva - Telefonía IP</div>
-                    <div class="footer-credit-line">
-                        Elaborado por <strong>Mercadeo Hogares - Mercados Masivos (VPPS)</strong>.
-                    </div>
-                    <div class="footer-credit-line">
-                        Colaboración y fuente de datos: <strong>Métodos Cuantitativos y Base de Datos -Gerencia Inteligencia y Servicios de Mercadeo</strong>.
-                    </div>
+                    <div class="footer-brand-tag" id="val-footer-brand-tag">IPulso: Infografía Ejecutiva - Telefonía IP</div>
+                    <div class="footer-credit-line" id="val-footer-credit-1">Elaborado por Mercadeo Hogares - Mercados Masivos (VPPS).</div>
+                    <div class="footer-credit-line" id="val-footer-credit-2">Colaboración y fuente de datos: Métodos Cuantitativos y Base de Datos -Gerencia Inteligencia y Servicios de Mercadeo.</div>
                 </div>
             </footer>
         </div>
